@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VysRails</title>
+  <%= render 'layouts/stylesheets' %>
+  
+</head>
+ <body>
+<% if user_signed_in? %>
+  Hi, you are signed in with <%= current_user.email %> |
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% end %>
+ <div class="container">
+      <%= render 'layouts/header' %>
+      <section class="round">
+        <%= yield %>
+      </section>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>
+

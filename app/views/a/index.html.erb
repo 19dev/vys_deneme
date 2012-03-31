@@ -1,0 +1,76 @@
+
+ 
+ 
+<div class="page-header home-page">
+  <h1>Ondokuz Mayıs Üniversitesi</h1>
+  <h2>Web Tabanlı Medikal Simülasyon<br>Eğitim Merkezine Hoş Geldiniz</h2>
+</div>
+
+<div id="ourWork">
+  <div class="home-content">
+    <strong>Lsim Nedir?</strong>
+    <p>
+    Lsim (Lightening Simulator), web tabanlı sanal hasta tasarımı ve oyunu üzerinden eğitimin yapıldığı bir araçtır.
+    </p>
+
+    <strong>Sanal Hasta Nedir?</strong>
+    <p>
+    Özellikle Tıp fakültesi öğrencileri için hazırlanmış ilginç bir uygulama şekli.
+    Her türlü hastalık yapay olarak üretilebiliyor.
+   Bu şekilde öğrenciler ve asistanlar sanki gerçek bir hasta ile uğraşıyormuş gibi o maketin üzerinde uygulama yapabiliyorlar.
+    Özellikle kadavra bulunmasının mümkün olmadığı zamanlarda aranan bir uygulamadır.
+    </p>
+    <img src="img/a/toshiba-medical-tablet-pc.jpg" />
+    
+  
+</div>
+
+<h4> Kullanıcı Girişi </h4>
+
+ <%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+ <div class="home-content right">
+    <strong>Sim'i Kimler Kullanmalıdır?</strong>
+    <p>Medikal eğitimleri için Sim kullanabilirsiniz:</p>
+
+    <ul>
+      <li>
+      Düğümlerinizi dallara ayırarak, öğrencilerin öğrenme sürecine katkı sağlayabilirsiniz.      </li>
+      <li>
+      Tahlil seçme, sonuç görüntüleme, fiziksel muayene, film değerlendirme, ilaç belirleme ve dozajını ayarlama imkanınız olacak.      </li>
+      <li>
+      Her bir düğümün maliyetlendirilmesi yapıldı: ödül-ceza puanı ve maliyet.      </li>
+      <li>
+      Daha fazla bilgi için <%= link_to "Hakkında", about_path %> sayfasını ziyaret ediniz.      </li>
+    </ul>
+  </div>
+</div>
+
+
